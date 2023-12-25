@@ -191,3 +191,22 @@ List<CustomError> customErrors = new List<CustomError>();
         StateHasChanged();
     }
 
+// Add show validation message in razor page by using the below line
+// @getValidationMsg(index,0,"Use your property name which you added in validation")
+//@getValidationMsg(index,0,"EstimatedPropertyValue")
+
+                                        <div class="position-relative mb-3">
+                                            <div class="formFloating mb-1 mt-2 loan_term_input">
+                                                <input type="text" class="form-control form-control-light" id="txtEstimatedPropertyValue"
+                                                       placeholder="$ 1,500,000" @onblur='(e)=> CheckCurrentInput1(e, "EstimatedPropertyValue",PropertyDetailsData)'
+                                                @bind-value="@PropertyDetailsData.EstimatedPropertyValue"> 
+                                                <label for="PropertyValue" class="control-label font-14">
+                                                    Estimated Property
+                                                    Value <span class="text-danger">*</span>
+                                                </label>
+                                            </div>
+                                            <div class="validation-message">
+                                                @getValidationMsg(index,0,"EstimatedPropertyValue")
+                                                <ValidationMessage For="@(() => PropertyDetailsData.EstimatedPropertyValue)" />
+                                            </div>
+                                        </div>
