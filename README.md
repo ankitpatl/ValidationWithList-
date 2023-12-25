@@ -1,6 +1,16 @@
 # ValidationWithList-
 Data Validation or data annotations With List
 
+# Make a model for custom errors to add all error through the object
+public class CustomError
+{
+    public int Index1 { get; set; }
+    public int Index2 { get; set; }
+    public string FieldName { get; set; }
+    public string Message { get; set; }
+    public bool isTouched { get; set; }
+    public bool hasError { get; set; }
+}
 
 
 Order SelectedOrder = new Order();
@@ -19,16 +29,7 @@ List<CustomError> customErrors = new List<CustomError>();
         }
     }
 
-# Make a model for custom errors to add all error through the object
-public class CustomError
-{
-    public int Index1 { get; set; }
-    public int Index2 { get; set; }
-    public string FieldName { get; set; }
-    public string Message { get; set; }
-    public bool isTouched { get; set; }
-    public bool hasError { get; set; }
-}
+
 
     private async Task ValidateData(bool Submitted)
     {
