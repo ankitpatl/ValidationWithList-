@@ -1,7 +1,6 @@
 # ValidationWithList-
 Data Validation or data annotations With List
 
-# Make a model for custom errors to add all error through the object
 
 
 public class CustomError
